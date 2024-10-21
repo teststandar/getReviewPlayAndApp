@@ -120,3 +120,61 @@ def filter_reviews_by_date_andro2(reviews, start_date, end_date):
                     
 
     return filtered_reviews
+
+def filter_reviews_ios_pd(reviews):
+    filtered_reviews = []
+    for review in reviews:
+        date_format = "%Y-%m-%dT%H:%M:%S%z"
+        filtered_review = {
+            "OS": "IOS",
+            "APP": "PD",
+            "Author": review['attributes']['reviewerNickname'],
+            "Rating": review['attributes']['rating'],
+            "Review": review['attributes']['body'],
+            "Date": datetime.strptime(review['attributes']['createdDate'], date_format).strftime("%Y-%m-%d %H:%M:%S")
+        }
+        filtered_reviews.append(filtered_review)
+    return filtered_reviews
+
+def filter_reviews_ios_pds(reviews):
+    filtered_reviews = []
+    for review in reviews:
+        date_format = "%Y-%m-%dT%H:%M:%S%z"
+        filtered_review = {
+            "OS": "IOS",
+            "APP": "PDS",
+            "Author": review['attributes']['reviewerNickname'],
+            "Rating": review['attributes']['rating'],
+            "Review": review['attributes']['body'],
+            "Date": datetime.strptime(review['attributes']['createdDate'], date_format).strftime("%Y-%m-%d %H:%M:%S")
+        }
+        filtered_reviews.append(filtered_review)
+    return filtered_reviews
+
+def filter_reviews_andro_pd(reviews):
+    filtered_reviews = []
+    for review in reviews:
+        filtered_review = {
+            "OS": "ANDROID",
+            "APP": "PD",
+            "Author": review['userName'],
+            "Rating": review['score'],
+            "Review": review['content'],
+            "Date": datetime.strptime(str(review['at']), "%Y-%m-%d %H:%M:%S")
+           }
+        filtered_reviews.append(filtered_review)
+    return filtered_reviews
+
+def filter_reviews_andro_pds(reviews):
+    filtered_reviews = []
+    for review in reviews:
+        filtered_review = {
+            "OS": "ANDROID",
+            "APP": "PDS",
+            "Author": review['userName'],
+            "Rating": review['score'],
+            "Review": review['content'],
+            "Date": datetime.strptime(str(review['at']), "%Y-%m-%d %H:%M:%S")
+           }
+        filtered_reviews.append(filtered_review)
+    return filtered_reviews
