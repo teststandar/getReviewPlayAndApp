@@ -3,3 +3,5 @@ dist/
 PD/
 PDS/
 key.p8
+key.json
+*.xlsx
