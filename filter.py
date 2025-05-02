@@ -19,10 +19,10 @@ def filter_reviews_by_date_ios(reviews, start_date, end_date):
             filtered_review = {
                 "Author": review['attributes']['reviewerNickname'],
                 "Rating": review['attributes']['rating'],
-                # "Title": review['attributes']['title'],
+                "Title": review['attributes']['title'],
                 "Review": review['attributes']['body'],
-                # "Territory": review['attributes']['territory'],
-                # "Date": review['attributes']['createdDate'],
+                "Territory": review['attributes']['territory'],
+                "Date": review['attributes']['createdDate'],
                 "Date": datetime.strptime(review['attributes']['createdDate'], date_format).strftime("%Y-%m-%d %H:%M:%S")
             }
             filtered_reviews.append(filtered_review)
@@ -50,9 +50,9 @@ def filter_reviews_by_date_andro(reviews, start_date, end_date):
                 "Rating": review['score'],
                 "Review": review['content'],
                 "Date": review['at'],
-                # "Reply Review": review['replyContent'],
-                # "Reply Date": review['repliedAt'],
-                # "App Version": review['appVersion'],
+                "Reply Review": review['replyContent'],
+                "Reply Date": review['repliedAt'],
+                "App Version": review['appVersion'],
             }
             filtered_reviews.append(filtered_review)
 

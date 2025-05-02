@@ -1,0 +1,6 @@
+projectKey=get-review
+serverUrl=http://localhost:9000
+serverVersion=25.3.0.104237
+dashboardUrl=http://localhost:9000/dashboard?id=get-review
+ceTaskId=b68862e2-1db8-4af3-90c4-d5126e6dfb1d
+ceTaskUrl=http://localhost:9000/api/ce/task?id=b68862e2-1db8-4af3-90c4-d5126e6dfb1d
